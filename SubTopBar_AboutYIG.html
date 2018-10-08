@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TopBar</title>
+    <link rel="stylesheet" href="SubTopBar_AboutYIG.css"/>
+</head>
+<body>
+<header class="top_header">
+    <nav class="Main_nav">
+        <img src="C:\Users\kshee\yig\yighub\yighub\static\yighub\images\yiglogo.png" height="50px" width="50px"/>    
+        <a id="YIG" href="#" title="YIG 메인페이지로 이동">YIG</a>
+        <a href="yighub/public/1/page/0/">About YIG</a>
+        <a href="yighub/public/6/page/0/">Recruiting</a>
+        <a href="yighub/public/10/page/0/">Member Profile</a>
+        <a href="yighub/public/11/page/0/">Fund</a>
+        <a href="yighub/public/15/page/0/">Resarch</a>
+        <a href="yighub/public/16/page/0">Contact Us</a>  
+        <a id="LogIn" href="yighub/login/">LogIn</a>
+        <a id="SignUp" href="yighub/join/">Become a YIGIAN</a>            
+    </nav>
+</header>
+<section class="sub_visual"></section>
+<section class="sub_section">
+    <section class="sub_nav">
+        <nav>
+            <ul class="sub_depth1">
+                <li><a href="#" onclick="sub_depth1_drop()">About YIG</a></li>
+                <ul id="sub_depth1_drop">
+                    <li><a>Recruiting</a></li>
+                    <li><a>Member Profile</a></li>
+                    <li><a>Fund</a></li>
+                    <li><a>Resarch</a></li>
+                    <li><a>Contact Us</a></li>
+                </ul>
+            </ul>
+        </nav>
+        <nav>
+            <ul class="sub_depth2">
+                <li><a href="#" onclick="sub_depth2_drop()">Introduction</a></li>
+                <ul id="sub_depth2_drop">
+                    <li><a>Vision</a></li>
+                    <li><a>Activity</a></li>
+                    <li><a>History</a></li>
+                    <li><a>Clipping</a></li>
+                </ul>
+            </ul>
+        </nav>
+    </section>
+    <section class="contents"></section>
+</section>
+</body>
+<script>
+function sub_depth1_drop(){
+    console.log(1);
+    var sub_one=document.getElementById("sub_depth1_drop");
+    if (sub_one.style.display==="none"){
+        sub_one.style.display="block";
+    } else{
+        sub_one.style.display="none";
+    }
+}
+
+function sub_depth2_drop(){
+    console.log(2);
+    var sub_one=document.getElementById("sub_depth2_drop");
+    if (sub_one.style.display==="none"){
+        sub_one.style.display="block";
+    } else{
+        sub_one.style.display="none";
+    }
+}
+</script>
+</html>
