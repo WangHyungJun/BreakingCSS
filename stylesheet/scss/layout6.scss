@@ -6,7 +6,7 @@ body{
 
 #wrap{
   width: 80%;
-  margin: 100px auto;
+  margin: 10px auto;
 }
 
 .box{
@@ -20,21 +20,35 @@ body{
 
 //4칸
 @media (max-width: 1024px){
+  .box{
+    width: 23%;
+    margin: 1%;
+  }
 
 }
 
 //3칸
 @media (max-width: 960px){
+  .box{
+    width: (100%/3-2);
+    margin: 2%;
+  }
 
 }
 
 //2칸
 @media (max-width: 768px){
-
+  .box{
+    width: (100%/2-2);
+    margin: 2%
+  }
 }
 
 //1칸
 @media (max-width: 480px){
-
+  .box{
+    width: 98%;
+    margin: 2%;
+  }
 }
 
