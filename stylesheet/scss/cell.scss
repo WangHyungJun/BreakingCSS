@@ -1,0 +1,21 @@
+@mixin latte{
+  color: #3333ff;
+  font-size: 14px;
+
+  &:before{
+    content: '';
+    display: block;
+    clear: both;
+ }
+}
+
+.americano{
+  @include latte;
+}
+
+
+$bg: red;
+
+h1{
+  color: $bg;
+}

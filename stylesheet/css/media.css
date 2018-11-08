@@ -1,0 +1,36 @@
+body {
+  background-color: black;
+}
+
+@media (max-width: 1280px) {
+  body {
+    background-color: #3333ff;
+  }
+}
+@media (max-width: 1024px) {
+  body {
+    background-color: #42a5f5;
+  }
+}
+@media (max-width: 900px) {
+  body {
+    background-color: #90caf9;
+  }
+}
+@media (max-width: 768px) {
+  body {
+    background-color: #e3f2fd;
+  }
+}
+@media (max-width: 600px) {
+  body {
+    background-color: #f48fb1;
+  }
+}
+@media (max-width: 480px) {
+  body {
+    background-color: #4527a0;
+  }
+}
+
+/*# sourceMappingURL=media.css.map */

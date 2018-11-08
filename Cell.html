@@ -1,29 +1,65 @@
-<html>
+<!DOCTYPE html>
+<html lang="ko">
 <head>
-    <link rel="stylesheet" href="Cell.css"/>
+    <meta charset="UTF-8">
+    <title>layout html4</title>
+    <style>
+        #wrap{
+            width: 960px;
+            height: 800px;
+            margin: 0 auto;
+            color: white;
+            text-align: center;
+        }
+
+        header{
+            width: 960px;
+            height: 100px;
+            background-color: #111;
+            line-height: 100px;
+        }
+
+        nav{
+            width: 960px;
+            height: 100px;
+            background-color: #222;
+            line-height: 100px;
+        }
+
+        aside{
+            width: 360px;
+            height: 500px;
+            background-color: #333;
+            float: left;
+            line-height: 500px;
+        }
+
+        section{
+            width: 600px;
+            height: 500px;
+            background-color: #444;
+            float: left;
+            line-height: 500px;
+        }
+
+        footer{
+            width: 960px ;
+            height: 100px;
+            background-color: #555;
+            clear: both;
+            line-height: 100px;
+        }
+
+    </style>
 </head>
-<h1>
-    테스트입니다.
-</h1>
-<div class="Top_Bar">
-    <a>cell_1</a>
-    <a>cell_2</a>
-    <a>cell_3</a>
-    <a>cell_4</a>
-    <a>cell_5</a>
+<body>
+<div id="wrap">
+    <header>header</header>
+    <nav>nav</nav>
+    <aside>sidebar</aside>
+    <section>contents</section>
+    <footer>footer</footer>>
 </div>
-<ul>        
-    <a href="#">안녕하세요</a>
-    <li>안녕하세요</li>
-    <li>안녕하세요</li>
-    <li>안녕하세요</li>
-    <li>안녕하세요</li>
-</ul>
-<li>안녕하세요</li>
-<li>안녕하세요</li>
-<li>안녕하세요</li>
-<li>안녕하세요</li>
-<li>안녕하세요</li>
-
-
+</body>
 </html>
+
