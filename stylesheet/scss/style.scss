@@ -1,0 +1,244 @@
+$acolor: rgba(0,0,0,.65);
+$navcolor: #25a2d0;
+
+h2{
+  margin: 0;
+  padding: 0;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+a{
+  style: none;
+}
+
+/*layout*/
+ #header{
+   background: url("C:/Users/kshee/Desktop/BreakingCSS/img/MainBackGround.jpg") repeat-x center top;
+ }
+
+#nav{
+
+}
+
+ .container{
+   width: 1200px;
+   margin: 0 auto;
+   position: relative;
+ }
+
+ /*quick*/
+.quick{
+  text-align: right;
+}
+
+.quick a{
+  color: white;
+  padding: 5px 0 4px 10px;
+  /*inline tag는 기본적으로 padding이나 margin 속성이 안 먹힘 */
+  display: inline-block;
+  transition: all 0.5s ease;
+}
+
+.quick a:hover{
+  color: #ccc;
+}
+
+.title{
+  text-align: center;
+  text-transform: uppercase;
+  padding-top: 75px;
+
+  p{
+    display: inline;
+    padding: 10px 20px;
+    font-size: 24px;
+    background-color: #51b0dc;
+    color: white;
+  }
+
+  h1 a{
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 14px;
+    background-color: #4a9abc;
+    color: white;
+    margin-top: -4px;
+  }
+}
+
+/* icon-font*/
+
+.icon-font{
+  text-align: center;
+  margin-top: 40px;
+  padding-bottom: 40px;
+
+    li{
+      display: inline;
+      position: relative;
+      a{
+        display: inline-block;
+        width: 60px;
+        height: 60px;
+        color: white;
+        background-color: $acolor;
+        font-size: 35px;
+        border-radius: 50%;
+        margin: 0 3px;
+
+        .tool{
+          font-size: 12px;
+          position: absolute;
+          left: 50%;
+          top: -70px;
+          background-color: $acolor;
+          padding: 1px 7px;
+          transform: translateX(-50%);
+          border-radius: 6px 0;
+          opacity: 0;
+          transition: all 0.5s ease-in-out;
+
+          /*: 하나만 쓰면 explore 9까지 작동함*/
+          &:before{
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            /*왜 -5px 주는지도 생각해보자*/
+            margin-left: -5px;
+            /*모양을 어떻게 만드는지는 나중에 다시 짚고 넘어갈 것.*/
+            border-top: 5px solid $acolor;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+          }
+        }
+      }
+
+      a:hover{
+        .tool{
+          opacity: 1;
+          top: -60px;
+        }
+      }
+    }
+}
+
+/*nav*/
+.nav{
+  padding: 30px 0;
+
+  h2{
+    font-size: 16px;
+    color: $navcolor;
+    padding-bottom: 5px;
+  }
+
+  li{
+    position: relative;
+    float: left;
+    width: 20%;
+    padding-left: 8px;
+    box-sizing: border-box;
+
+    a{
+      padding: 3px;
+      border-radius: 2px;
+      transition: all 0.1s ease;
+
+    }
+
+    a:hover{
+      background-color: $navcolor;
+      color: white;
+    }
+
+    &:before{
+      content: '';
+      width: 3px;
+      height: 3px;
+      background-color: $navcolor;
+      position: absolute;
+      left: 0;
+      top: 0;
+      border-radius: 50%;
+      top:8px;
+    }
+  }
+}
+
+.tit{
+  text-align: center;
+
+  h2{
+    font-size:  39px;
+    color: #0093bd;
+    font-family: 'Nanum Gothic';
+  }
+
+  .btn{
+    position: absolute;
+    right: 0;
+    top: 3px;
+
+    a{
+      width: 60px;
+      height: 60px;
+      display: block;
+      color: white;
+      background-color: #4a9abf;
+      border-radius: 50%;
+      font-size: 33px;
+      line-height: 64px;
+    }
+  }
+}
+
+@media (max-width: 1280px) {
+  /*container는 나중에 스크롤바 등 여러 문제가 생길 수 있기 때문에 무조건 100을 유지해줘야 한다.*/
+  .container{
+    width: 100%;
+    .row{
+    padding: 0 15px;
+    }
+  }
+  .tit{
+    .btn{
+      margin-right: 15px;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+ .nav li{
+   width: 25%;
+ }
+}
+
+@media (max-width: 960px) {
+
+}
+
+@media (max-width: 768px) {
+ .nav li{
+   width: (100%/3);
+ }
+}
+
+@media (max-width: 600px) {
+  /*반응형은 높이값이 있으면 안 된다.*/
+ .title, .icon-font, .nav, .btn{
+   display: none;
+ }
+}
+
+@media (max-width: 480px) {
+
+}
+
+@media (max-width: 320px) {
+
+}
