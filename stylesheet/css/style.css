@@ -1,9 +1,4 @@
 @charset "UTF-8";
-h2 {
-  margin: 0;
-  padding: 0;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -16,6 +11,39 @@ a {
 /*layout*/
 #header {
   background: url("C:/Users/kshee/Desktop/BreakingCSS/img/MainBackGround.jpg") repeat-x center top;
+}
+
+/*참고는 퀄리티 있는 사이트로! 유명한 사이트가 차라리 낫다. 허접한 곳은 참고 노노*/
+#contents .container {
+  border-left: 1px solid rgba(0, 0, 0, 0.2);
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+#cont-left {
+  float: left;
+  width: 250px;
+}
+
+#cont-center {
+  /*중심을 잡기 위함. 규칙은 설명할 수 없다.*/
+  overflow: hidden;
+  min-height: 1400px;
+  margin-right: 250px;
+  border-left: 1px solid rgba(0, 0, 0, 0.2);
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+#cont-right {
+  width: 250px;
+  position: absolute;
+  right: 0;
+  top: 0px;
+}
+
+#footer {
+  width: 100%;
+  height: 200px;
+  border-top: 1px solid black;
 }
 
 .container {
@@ -151,6 +179,9 @@ a {
 
 .tit {
   text-align: center;
+  height: 65px;
+  background: rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid #f12828;
 }
 .tit h2 {
   font-size: 39px;
@@ -173,6 +204,94 @@ a {
   line-height: 64px;
 }
 
+/*cbox*/
+.cbox {
+  padding: 15px;
+  border-bottom: 1px solid black;
+}
+.cbox .cbox-tit {
+  font-size: 20px;
+  color: #2f7fa6;
+}
+.cbox .cbox-desc {
+  border-bottom: 1px dashed black;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  color: #878787;
+}
+
+#cont-left article:last-child {
+  border-bottom: 0;
+}
+
+#cont-center article:last-child {
+  border-bottom: 0;
+}
+
+#cont-right article:last-child {
+  border-bottom: 0;
+}
+
+.menu li {
+  position: relative;
+}
+.menu li a {
+  display: block;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #878787;
+  border-bottom: 1px solid #dbdbdb;
+  padding: 10px;
+  transition: all 0.3s ease;
+}
+.menu li a i {
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.menu li a:hover {
+  color: #333;
+}
+
+/*notice*/
+.notice {
+  position: relative;
+}
+.notice h5 {
+  font-size: 14px;
+  color: #2f7fa6;
+}
+.notice li {
+  /*overflow부터 white-space까지 li 한 줄 출력 기능*/
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  position: relative;
+  padding-left: 8px;
+}
+.notice li:before {
+  content: '';
+  width: 3px;
+  height: 3px;
+  background-color: #449ce2;
+  position: absolute;
+  left: 0;
+  top: 8px;
+  border-radius: 50%;
+}
+.notice .more {
+  position: absolute;
+  top: 6px;
+  right: 0;
+  text-transform: uppercase;
+  /*9px가 최소 크기다*/
+  font-size: 9px;
+}
+.notice .more a {
+  color: #878787;
+}
+
 @media (max-width: 1280px) {
   /*container는 나중에 스크롤바 등 여러 문제가 생길 수 있기 때문에 무조건 100을 유지해줘야 한다.*/
   .container {
@@ -185,10 +304,28 @@ a {
   .tit .btn {
     margin-right: 15px;
   }
+
+  /*외국사이트 같은 경우에는 아예 처음부터 box-sizing을 재조정하는 경우도 있다.*/
+  #contents .container {
+    border: 0;
+  }
 }
+/*media query는 항상 밑에 있어야 한다. 중간에 있으면 오류난다.*/
 @media (max-width: 1024px) {
   .nav li {
     width: 25%;
+  }
+}
+@media (max-width: 960px) {
+  #cont-right {
+    width: 100%;
+    position: static;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+  }
+
+  #cont-center {
+    margin-right: 0;
+    border-right: 0;
   }
 }
 @media (max-width: 768px) {
@@ -200,6 +337,51 @@ a {
   /*반응형은 높이값이 있으면 안 된다.*/
   .title, .icon-font, .nav, .btn {
     display: none;
+  }
+
+  #cont-left {
+    float: none;
+    width: 100%;
+  }
+
+  #cont-center {
+    border-left: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+  }
+
+  .cbox.column1 {
+    padding: 0;
+    border-bottom: 0;
+  }
+  .cbox.column1 .cbox-tit {
+    display: none;
+  }
+  .cbox.column1 .cbox-desc {
+    display: none;
+  }
+  .cbox.column1 .menu ul {
+    overflow: hidden;
+  }
+  .cbox.column1 .menu ul li {
+    text-align: center;
+    float: left;
+    width: 33.3333333333%;
+    border-right: 1px solid #dbdbdb;
+    box-sizing: border-box;
+  }
+  .cbox.column1 .menu ul li a {
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    color: white;
+  }
+  .cbox.column1 .menu ul li a i {
+    display: none;
+  }
+  .cbox.column1 .menu ul li:nth-child(3n) {
+    border-right: 0;
+  }
+
+  .cbox.column2 {
+    background-color: #f1f4fb;
   }
 }
 

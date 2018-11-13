@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,YAAY;AACZ,eAAe;EACb,OAAO,EAAE,EAAE;EACX,OAAO,EAAE,KAAK;EACd,KAAK,EAAE,IAAI;;AAGb,EAAE;EACA,eAAe,EAAE,IAAI;;AAGvB,CAAC;EACC,eAAe,EAAE,IAAI;EACrB,KAAK,EAAE,OAAO",
+"sources": ["../scss/magic.scss"],
+"names": [],
+"file": "magic.css"
+}
