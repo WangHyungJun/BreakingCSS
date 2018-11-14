@@ -324,6 +324,117 @@ a{
   }
 }
 
+/*blog*/
+.blog{
+  h5{
+    font-size: 14px;
+    color: #2f7fa6;
+    padding-bottom: 3px;
+  }
+
+  .blog-img {
+    position: relative;
+    display: block;
+    font-size: 16px;
+    background-color: #000;
+    color: #fff;
+
+    img{
+      /*img는 인라인 요소이기 때문에 패딩 기본 장착이다.*/
+      display: block;
+      margin-bottom: 3px;
+    }
+    em {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      margin-top: -10px;
+      z-index: 100;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    &:after{
+      content: '';
+      position: absolute; left:0; top:0;
+      display:block;
+      background: rgba(0,0,0,0);
+      width: 100%; height: 100%;
+      z-index: 50;
+      transition: background 0.3s ease-in-out;
+    }
+  }
+
+  .blog-img:hover{
+
+    &:after{
+      background: rgba(0,0,0,.4);
+    }
+
+    em{
+      opacity: 1;
+    }
+  }
+}
+
+.blog2{
+
+  h5{
+    font-size: 14px;
+    color: #2f7fa6;
+    padding-bottom: 3px;
+  }
+
+  .blog-img{
+    display: block;
+    position: relative;
+    overflow: hidden;
+    color: white;
+
+    img{
+      display: block;
+      margin-bottom: 3px;
+      transform: scale(1,1);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    em{
+      font-size: 0px;
+      opacity: 0;
+      position: absolute; left: 50%; top:50%;
+      transform: translate(-50%, -50%);
+      z-index: 100;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    &:after{
+      content: '';
+      display: block;
+      position: absolute;
+      width:100%; height: 100%;
+      top:0; left:0;
+      z-index: 90;
+      background-color: rgba(0,0,0,0);
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    &:hover{
+      &:after{
+        background-color: rgba(0,0,0,.4);
+      }
+      em{
+        opacity: 1;
+        font-size: 16px;
+      }
+      img{
+        transform: scale(1.5, 1.5);
+      }
+    }
+  }
+}
+
 .footer{
 
 }
@@ -344,11 +455,17 @@ a{
 
   /*외국사이트 같은 경우에는 아예 처음부터 box-sizing을 재조정하는 경우도 있다.*/
   #contents{
-      .container{
-        border:0;
-      }
+    .container{
+      border:0;
     }
+   &:after{
+     content: "";
+    display: table;
+    clear: both;
+   }
+  }
 }
+
 
 /*media query는 항상 밑에 있어야 한다. 중간에 있으면 오류난다.*/
 @media (max-width: 1024px) {

@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /*여백 초기화*/
 body, div, dl, dd, dt, ul, li, ol, h1, h2, h3, h4, h5, h6, form, input, legend,
-textarea, select, fieldset, p, button, figure, figcaption {
+textarea, select, fieldset, p, button {
   margin: 0;
   padding: 0; }
 
@@ -54,15 +54,6 @@ section, article, aside, figure, figcaption, footer, header, menu, nav, details 
 /*반응형 이미지*/
 img {
   width: 100%; }
-
-/*휴대폰 글씨 크기 가로모드 초기화*/
-html{
-    font-size: 100%;
-    /*사파리, 크롬*/
-    -webkit-text-size-adjust: none;
-    /*익스플로어*/
-    -ms-text-size-adjust: none;
-}
 
 /*clearfix*/
 .clearfix {
