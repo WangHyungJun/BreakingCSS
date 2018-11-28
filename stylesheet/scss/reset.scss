@@ -45,9 +45,17 @@ section, article, aside, figure, figcaption, footer, header, menu, nav, details{
 }
 
 /*반응형 이미지*/
-img{
+img, video {
   width: 100%;
 }
+
+/*가로모드 글씨 초기화*/
+html{
+  font-size: 100%;
+  -webkit-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+}
+
 
 /*clearfix*/
 .clearfix{

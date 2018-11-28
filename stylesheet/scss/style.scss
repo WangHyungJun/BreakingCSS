@@ -18,7 +18,11 @@ a{
  }
 
 #nav{
+  display: none;
+}
 
+#nav.show{
+  display: block;
 }
 
 /*참고는 퀄리티 있는 사이트로! 유명한 사이트가 차라리 낫다. 허접한 곳은 참고 노노*/
@@ -345,12 +349,10 @@ a{
       margin-bottom: 3px;
     }
     em {
-      position: absolute;
-      top: 50%;
-      left: 0;
+      position: absolute; left: 50%; top:50%;
+      transform: translate(-50%, -50%);
       width: 100%;
       text-align: center;
-      margin-top: -10px;
       z-index: 100;
       opacity: 0;
       transition: opacity 0.3s ease-in-out;
@@ -435,8 +437,120 @@ a{
   }
 }
 
-.footer{
+/*square*/
+.square{
+  a{
+    float: left;
+    width: 19%; margin: 0.5%;
 
+    img{
+      display: block;
+      height: 100px;
+    }
+  }
+}
+
+.vedio{
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+
+  .iframe{
+    border: 0; width: 100%; height: 100%;
+    position: absolute;
+
+  }
+}
+
+.rotate{
+  position: relative;
+  a{
+    display: block;
+    text-align: center;
+    color: white;
+    /*3D를 위한 perspective 설정 */
+    perspective: 600px;
+
+    .front{
+      transform: rotateX(0deg) rotateY(0deg);
+      transition: all 0.5s ease-in-out;
+      backface-visibility: hidden;
+    }
+
+    .back{
+      background-color: #0093bd; width: 100%; height: 100%;
+      position: absolute; top: 0;
+      z-index: -1;
+      transform: rotateX(0deg) rotateY(-180deg);
+      transition: all 0.5s ease-in-out;
+      backface-visibility: hidden;
+    }
+
+    &:hover{
+      .front{
+        transform: rotateX(0deg) rotateY(180deg);
+      }
+      .back{
+        transform: rotateX(0deg) rotateY(0deg);
+        z-index: 1;
+      }
+    }
+  }
+}
+
+/*rotate2*/
+.rotate2{
+  position: relative;
+  perspective: 500px;
+
+  img{
+    display: block;
+  }
+
+  &:after{
+    content: '';
+    background-color: rgba(255,255,255,0.8);
+    position: absolute;
+    left:10%; top: 7%; bottom: 7%; right: 10%;
+    transform: rotateX(90deg);
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+  }
+
+  &:hover:after{
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+}
+
+
+.footer{
+  text-align: center;
+  padding: 30px 50px;
+
+  li{
+    display: inline;
+    padding: 0 7px;
+    position: relative;
+    /*white-space의 기능은 한 줄로 끊을 수 있게!*/
+    white-space: nowrap;
+
+    &:before{
+      content: '';
+      width: 1px; height: 10px;
+      background-color: black;
+      position: absolute;
+      left: 0; top: 2px;
+    }
+
+    &:first-child:before{
+      width: 0;
+    }
+  }
+
+  address{
+    padding-top: 15px;
+  }
 }
 
 @media (max-width: 1280px) {
@@ -479,10 +593,46 @@ a{
     width: 100%;
     position: static;
     border-top: $line;
+    overflow: hidden;
+
+    .cbox{
+      float: left;
+      width: (100%/3);
+      box-sizing: border-box;
+    }
+
+    .cbox.column7{
+      border-right: 1px solid black;
+    }
+
+    .cbox.column8{
+      border-right: 1px solid black;
+    }
+
+
+    .cbox.column9{
+        border-right: 1px solid transparent;
+        border-bottom: 1px solid black;
+    }
   }
   #cont-center{
     margin-right: 0;
     border-right: 0;
+  }
+
+  .square{
+    a{
+      width: 24%;
+
+      &:nth-child(5n){
+        display: none;
+      }
+    }
+
+  }
+
+  #footer{
+    border-top: 0px;
   }
 }
 
@@ -490,6 +640,16 @@ a{
  .nav li{
    width: (100%/3);
  }
+
+  .square{
+    a{
+      width: 32.33333%;
+
+      &:nth-child(5){
+        display: block;
+      }
+    }
+  }
 }
 
 @media (max-width: 600px) {
@@ -534,8 +694,36 @@ a{
     }
   }
 
+  #cont-right{
+    .cbox{
+      width: (100%/2);
+    }
+
+    .cbox.column7{
+      border-right: 1px solid black;
+    }
+
+    .cbox.column8{
+      border-right: 1px solid transparent;
+    }
+
+    .cbox.column9{
+        display: none;
+    }
+  }
+
   .cbox.column2{
     background-color: #f1f4fb;
+  }
+
+  .square{
+    a{
+      width: 49%;
+
+      &:last-child{
+        display: block;
+      }
+    }
   }
 }
 
@@ -544,5 +732,25 @@ a{
 }
 
 @media (max-width: 320px) {
+
+  .square{
+    a{
+      width: 98%;
+      margin: 1%;
+    }
+  }
+  #cont-right{
+    .cbox{
+      width: 100%;
+    }
+
+    .cbox.column7{
+      border-right: 0px;
+    }
+
+    .cbox.column8{
+      border-right: 0px;
+    }
+  }
 
 }
